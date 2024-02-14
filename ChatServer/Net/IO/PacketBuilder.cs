@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ChatClient.Net.IO
+namespace ChatServer.Net.IO
 {
     class PacketBuilder
     {
         MemoryStream _ms;
-        
         public PacketBuilder()
         {
             _ms = new MemoryStream(0);
@@ -22,7 +18,7 @@ namespace ChatClient.Net.IO
 
         }
 
-        public void WriteString(string msg)
+        public void WriteMessage(string msg)
         {
             var msLength = msg.Length;
             _ms.Write(BitConverter.GetBytes(msLength));
@@ -33,6 +29,5 @@ namespace ChatClient.Net.IO
         {
             return _ms.ToArray();
         }
-
     }
 }
