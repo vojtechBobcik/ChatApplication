@@ -47,6 +47,7 @@ namespace ChatClient.Net
                 while (true)
                 {
                     var opcode = PacketReader.ReadByte();
+                    Console.WriteLine("test");
                 }
             });
         }
